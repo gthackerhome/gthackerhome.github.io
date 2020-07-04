@@ -21,7 +21,16 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
   input[type=submit] {
     background-color: #984b43;
     color: white;
@@ -113,8 +122,8 @@ var mydata = {
 <div class="topnav" id="myTopnav">
   <a href="./index.html">GT Hacker Home</a>
   <a href="./about.html">About</a>
-  <div id="signup"><a href="./login.html" >Login</a>
-	<a href="./signup.html" class="active">Sign Up</a></div>
+  <div id="signup"><a href="./login.html" class="active" >Login</a>
+	<a href="./signup.html" >Sign Up</a></div>
 	<div id="welcomeusername"></div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
   <i class="fa fa-bars"></i>
