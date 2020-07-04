@@ -53,10 +53,10 @@ function showUsername() {
 	if (username != "") {
 		document.getElementById("signup").style.visibility="hidden";
 		document.getElementById("signup").textContent=username;
-		document.getElementById("username").style.visibility="visible";
+		document.getElementById("welcomeusername").style.visibility="visible";
 	} else {
 		document.getElementById("signup").style.visibility="visible";
-		document.getElementById("username").style.visibility="hidden";
+		document.getElementById("welcomeusername").style.visibility="hidden";
 	}
 		
 }
@@ -127,7 +127,7 @@ axios({
     <a href="./about.html">About</a>
     <a href="./login.html" >Login</a>
     <a href="./signup.html"class="active" id="signup">Sign Up</a>
-	<div id="username"></div>
+	<div id="welcomeusername"></div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
     </a>
