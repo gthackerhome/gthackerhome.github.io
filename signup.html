@@ -61,7 +61,7 @@ function showUsername() {
 		
 }
 
-
+showUsername();
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -106,6 +106,7 @@ axios({
   {withCredentials: true}
   ).then((response) => {
   	setCookie("username", response.data);
+	showUsername();
   }, (error) => {
     console.log(error);
   });
