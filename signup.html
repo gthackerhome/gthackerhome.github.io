@@ -106,12 +106,15 @@ axios({
   ).then((response) => {
   	setCookie("username", response.data);
 	showUsername();
+	alert("You have been signed in");
   }, (error) => {
     console.log(error);
+	alert("There's been an error, please try using a different username");
   });
 
 }, (error) => {
   console.log(error);
+	alert("Theres been an error, please try again");
 });
 };
 
