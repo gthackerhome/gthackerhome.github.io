@@ -1633,7 +1633,7 @@ var app = (function () {
     const { window: window_1 } = globals;
     const file$4 = "src/App.svelte";
 
-    // (86:16) 
+    // (105:16) 
     function create_if_block_1(ctx) {
     	let list;
     	let current;
@@ -1674,14 +1674,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(86:16) ",
+    		source: "(105:16) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (84:1) {#if item}
+    // (103:1) {#if item}
     function create_if_block$2(ctx) {
     	let item_1;
     	let current;
@@ -1726,7 +1726,7 @@ var app = (function () {
     		block,
     		id: create_if_block$2.name,
     		type: "if",
-    		source: "(84:1) {#if item}",
+    		source: "(103:1) {#if item}",
     		ctx
     	});
 
@@ -1734,18 +1734,21 @@ var app = (function () {
     }
 
     function create_fragment$4(ctx) {
-    	let div;
+    	let div2;
     	let a0;
     	let t1;
     	let a1;
     	let t3;
+    	let div0;
     	let a2;
     	let t5;
     	let a3;
     	let t7;
+    	let div1;
+    	let t8;
     	let a4;
     	let i;
-    	let t8;
+    	let t9;
     	let main;
     	let current_block_type_index;
     	let if_block;
@@ -1767,64 +1770,74 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div = element("div");
+    			div2 = element("div");
     			a0 = element("a");
     			a0.textContent = "GT Hacker Home";
     			t1 = space();
     			a1 = element("a");
     			a1.textContent = "About";
     			t3 = space();
+    			div0 = element("div");
     			a2 = element("a");
     			a2.textContent = "Login";
     			t5 = space();
     			a3 = element("a");
     			a3.textContent = "Sign Up";
     			t7 = space();
+    			div1 = element("div");
+    			t8 = space();
     			a4 = element("a");
     			i = element("i");
-    			t8 = space();
+    			t9 = space();
     			main = element("main");
     			if (if_block) if_block.c();
     			attr_dev(a0, "href", "#home");
     			attr_dev(a0, "class", "active svelte-qquc9");
-    			add_location(a0, file$4, 73, 2, 1282);
+    			add_location(a0, file$4, 91, 2, 1721);
     			attr_dev(a1, "href", "./about.html");
     			attr_dev(a1, "class", "svelte-qquc9");
-    			add_location(a1, file$4, 74, 2, 1334);
+    			add_location(a1, file$4, 92, 2, 1773);
     			attr_dev(a2, "href", "./login.html");
     			attr_dev(a2, "class", "svelte-qquc9");
-    			add_location(a2, file$4, 75, 2, 1369);
+    			add_location(a2, file$4, 93, 21, 1827);
     			attr_dev(a3, "href", "./signup.html");
     			attr_dev(a3, "class", "svelte-qquc9");
-    			add_location(a3, file$4, 76, 2, 1404);
+    			add_location(a3, file$4, 94, 1, 1862);
+    			attr_dev(div0, "id", "signup");
+    			add_location(div0, file$4, 93, 4, 1810);
+    			attr_dev(div1, "id", "welcomeusername");
+    			add_location(div1, file$4, 95, 1, 1906);
     			attr_dev(i, "class", "fa fa-bars");
-    			add_location(i, file$4, 78, 2, 1511);
+    			add_location(i, file$4, 97, 2, 2010);
     			attr_dev(a4, "href", "javascript:void(0);");
     			attr_dev(a4, "class", "icon svelte-qquc9");
     			attr_dev(a4, "onclick", "myFunction()");
-    			add_location(a4, file$4, 77, 2, 1442);
-    			attr_dev(div, "class", "topnav svelte-qquc9");
-    			attr_dev(div, "id", "myTopnav");
-    			add_location(div, file$4, 72, 0, 1245);
+    			add_location(a4, file$4, 96, 2, 1941);
+    			attr_dev(div2, "class", "topnav svelte-qquc9");
+    			attr_dev(div2, "id", "myTopnav");
+    			add_location(div2, file$4, 90, 0, 1684);
     			attr_dev(main, "class", "svelte-qquc9");
-    			add_location(main, file$4, 82, 0, 1553);
+    			add_location(main, file$4, 101, 0, 2052);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div, anchor);
-    			append_dev(div, a0);
-    			append_dev(div, t1);
-    			append_dev(div, a1);
-    			append_dev(div, t3);
-    			append_dev(div, a2);
-    			append_dev(div, t5);
-    			append_dev(div, a3);
-    			append_dev(div, t7);
-    			append_dev(div, a4);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, a0);
+    			append_dev(div2, t1);
+    			append_dev(div2, a1);
+    			append_dev(div2, t3);
+    			append_dev(div2, div0);
+    			append_dev(div0, a2);
+    			append_dev(div0, t5);
+    			append_dev(div0, a3);
+    			append_dev(div2, t7);
+    			append_dev(div2, div1);
+    			append_dev(div2, t8);
+    			append_dev(div2, a4);
     			append_dev(a4, i);
-    			insert_dev(target, t8, anchor);
+    			insert_dev(target, t9, anchor);
     			insert_dev(target, main, anchor);
 
     			if (~current_block_type_index) {
@@ -1882,8 +1895,8 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t8);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t9);
     			if (detaching) detach_dev(main);
 
     			if (~current_block_type_index) {
@@ -1904,6 +1917,30 @@ var app = (function () {
     	});
 
     	return block;
+    }
+
+    function showUsername() {
+    	
+    }
+
+    function getCookie(cname) {
+    	var name = cname + "=";
+    	var decodedCookie = decodeURIComponent(document.cookie);
+    	var ca = decodedCookie.split(";");
+
+    	for (var i = 0; i < ca.length; i++) {
+    		var c = ca[i];
+
+    		while (c.charAt(0) == " ") {
+    			c = c.substring(1);
+    		}
+
+    		if (c.indexOf(name) == 0) {
+    			return c.substring(name.length, c.length);
+    		}
+    	}
+
+    	return "";
     }
 
     function instance$4($$self, $$props, $$invalidate) {
@@ -1927,6 +1964,7 @@ var app = (function () {
     	}
 
     	onMount(hashchange);
+    	window.onload = showUsername();
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -1942,7 +1980,9 @@ var app = (function () {
     		Item,
     		item,
     		page,
-    		hashchange
+    		hashchange,
+    		showUsername,
+    		getCookie
     	});
 
     	$$self.$inject_state = $$props => {
