@@ -46,12 +46,47 @@
 </head>
 
 <script>
+
+		
+function showUsername() {
+	var username = getCookie("username");
+	if (username != "") {
+		document.getElementById("signup").style.visibility="hidden";
+		document.getElementById("signup").textContent=username;
+		document.getElementById("username").style.visibility="visible";
+	} else {
+		document.getElementById("signup").style.visibility="visible";
+		document.getElementById("username").style.visibility="hidden";
+	}
+		
+}
+
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
 function setCookie(cname, cvalue) {
   var d = new Date();
   d.setTime(d.getTime() + (365*24*60*60*1000));
   var expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + ";path=/;SameSite=strict;secure";
 }
+
+
 function handleFormSubmit() {
 var mydata = {"email": document.getElementById('email').value,
               "username": document.getElementById('username').value,
@@ -91,7 +126,8 @@ axios({
     <a href="./index.html">GT Hacker Home</a>
     <a href="./about.html">About</a>
     <a href="./login.html" >Login</a>
-    <a href="./signup.html"class="active">Sign Up</a>
+    <a href="./signup.html"class="active" id="signup">Sign Up</a>
+	<div id="username"></div>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
     </a>
