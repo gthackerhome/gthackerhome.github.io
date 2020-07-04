@@ -44,11 +44,78 @@ input[type=text], select, textarea {
 
 </head>
 <body>
+
+<script>
+
+		
+function showUsername() {
+	var username = getCookie("username");
+	if (username != "") {
+		document.getElementById("signup").style.visibility="hidden";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a>";
+		document.getElementById("welcomeusername").style.visibility="visible";
+	} else {
+		document.getElementById("signup").style.visibility="visible";
+		document.getElementById("welcomeusername").style.visibility="hidden";
+	}
+		
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+function setCookie(cname, cvalue) {
+  var d = new Date();
+  d.setTime(d.getTime() + (365*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + ";path=/;SameSite=strict;secure";
+}
+
+
+function handleFormSubmit() {
+var mydata = {
+              "username": document.getElementById('username').value,
+              "password": document.getElementById('password').value,
+            };
+  axios.post('https://greetez.com:4343/user_api/login',
+  {"username": mydata.username, "password": mydata.password},
+  {withCredentials: true}
+  ).then((response) => {
+  	setCookie("username", response.data);
+	showUsername();
+	alert("You have been signed in. Fully close browser to sign out");
+  }, (error) => {
+    console.log(error);
+	alert("There's been an error, please try using a different username");
+  });
+
+};
+
+</script>
+
+
+
+
 <div class="topnav" id="myTopnav">
   <a href="./index.html">GT Hacker Home</a>
   <a href="./about.html">About</a>
-  <a href="./login.html" class="active">Login</a>
-  <a href="./signup.html">Sign Up</a>
+  <div id="signup"><a href="./login.html" >Login</a>
+	<a href="./signup.html" class="active">Sign Up</a></div>
+	<div id="welcomeusername"></div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
   <i class="fa fa-bars"></i>
   </a>
@@ -68,4 +135,5 @@ input[type=text], select, textarea {
   
     </form>
   </div>
+ <script>window.onload = showUsername();</script>
 </body> 
