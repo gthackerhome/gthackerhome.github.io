@@ -46,6 +46,12 @@
 </head>
 
 <script>
+function setCookie(cname, cvalue) {
+  var d = new Date();
+  d.setTime(d.getTime() + (365*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
 function handleFormSubmit() {
 var mydata = {"email": document.getElementById('email').value,
               "username": document.getElementById('username').value,
@@ -64,8 +70,8 @@ axios({
   {"username": mydata.username, "password": mydata.password},
   {withCredentials: true}
   ).then((response) => {
-    console.log("done");
-    console.log(response);
+    console.log(response.data);
+  	setCookie("username", response.data);
   }, (error) => {
     console.log(error);
   });
