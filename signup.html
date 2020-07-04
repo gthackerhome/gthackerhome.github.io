@@ -51,15 +51,13 @@
 function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
-		document.getElementById("signup").style.visibility="hidden";
+		document.getElementById("signup").style.display = "none";
 		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a>";
-		document.getElementById("welcomeusername").style.visibility="visible";
+		document.getElementById("welcomeusername").style.display = "initial";
 	} else {
-		document.getElementById("signup").style.visibility="visible";
-		document.getElementById("welcomeusername").style.visibility="hidden";
+		document.getElementById("signup").style.display = "initital";
+		document.getElementById("welcomeusername").style.display = "none";
 	}
-		
-}
 
 function getCookie(cname) {
   var name = cname + "=";
