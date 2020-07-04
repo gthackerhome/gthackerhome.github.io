@@ -95,7 +95,7 @@ var mydata = {
               
             };
   axios.post('https://greetez.com:4343/item_api/create_post',
-  mydata
+  mydata,{withCredentials: true}
   ).then((response) => {
 	alert(response);
   }, (error) => {
