@@ -107,6 +107,7 @@ var mydata = {
   	setCookie("username", response.data);
 	showUsername();
 	alert("You have been signed in. Fully close browser to sign out");
+  window.location.assign("https://gthackerhome.github.io");
   }, (error) => {
     console.log(error);
 	alert("There's been an error, please try using a different username");
