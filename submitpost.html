@@ -55,8 +55,27 @@ input[type=password], select, textarea {
 <body>
 
 <script>
+function clearCookie(cname) {
+  var d = new Date();
+  d.setTime(d.getTime() - (365*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + "''" + ";" + ";path=/;SameSite=strict;secure";
+}		
+function logout(){
+axios.get('https://greetez.com:4343/user_api/logout'
+  ).then((response) => {
+  	clearCookie("username");
+	showUsername();
+	alert("You have been signed out");
+  window.location.assign("https://gthackerhome.github.io");
+  }, (error) => {
+    console.log(error);
+	alert("There's been an error, please try closing the browser fully");
+  });
 
-		
+
+}
+
 function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
