@@ -62,7 +62,7 @@ function clearCookie(cname) {
   document.cookie = cname + "=" + "''" + ";" + ";path=/;SameSite=strict;secure";
 }		
 function logout(){
-axios.get('https://greetez.com:4343/user_api/logout'
+axios.get('https://greetez.com:4343/user_api/logout',{withCredentials: true}
   ).then((response) => {
   	clearCookie("username");
 	showUsername();
