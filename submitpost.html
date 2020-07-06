@@ -80,7 +80,7 @@ function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
-		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html' class='active'>Submit</a><a href='' on:click='logout;'>Logout</a>";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html' class='active'>Submit</a><p' on:click='logout;'>Logout</p>";
 		document.getElementById("welcomeusername").style.display = "initial";
 	} else {
 		document.getElementById("signup").style.display = "initial";
