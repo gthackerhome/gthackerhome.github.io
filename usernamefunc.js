@@ -1,4 +1,4 @@
-function showUsername() {
+export function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
@@ -12,7 +12,7 @@ function showUsername() {
 	}
 }
 
-function getCookie(cname) {
+export function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -29,21 +29,21 @@ function getCookie(cname) {
 }
 
 
-function setCookie(cname, cvalue) {
+export function setCookie(cname, cvalue) {
   var d = new Date();
   d.setTime(d.getTime() + (365*24*60*60*1000));
   var expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + ";path=/;SameSite=strict;secure";
 }
 
-function clearCookie(cname) {
+export function clearCookie(cname) {
     var d = new Date();
     d.setTime(d.getTime() - (365*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=;path=/;SameSite=strict;secure";
   }		
 
-function logout(){
+export function logout(){
     axios.post('https://greetez.com:4343/user_api/logout',{"username": getCookie("username")}, {withCredentials: true}
         ).then((response) => {
         console.log(response);
