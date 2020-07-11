@@ -1,5 +1,5 @@
-import axios from 'axios';
-function showUsername() {
+import 'https://unpkg.com/axios/dist/axios.min.js';
+ function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
