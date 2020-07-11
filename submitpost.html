@@ -62,8 +62,9 @@ function clearCookie(cname) {
   document.cookie = cname + "=" + "''" + ";" + ";path=/;SameSite=strict;secure";
 }		
 function logout(){
-axios.post('https://greetez.com:4343/user_api/logout',{withCredentials: true}
+axios.get('https://greetez.com:4343/user_api/logout',{withCredentials: true}
   ).then((response) => {
+  console.log(response);
   clearCookie("username");
 	showUsername();
 	alert("You have been signed out");
