@@ -1,5 +1,4 @@
-import 'https://unpkg.com/axios/dist/axios.min.js';
- function showUsername() {
+function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
@@ -43,18 +42,3 @@ import 'https://unpkg.com/axios/dist/axios.min.js';
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=;path=/;SameSite=strict;secure";
   }		
-
- function logout(){
-    axios.post('https://greetez.com:4343/user_api/logout',{"username": getCookie("username")}, {withCredentials: true}
-        ).then((response) => {
-        console.log(response);
-        clearCookie("username");
-        showUsername();
-        alert("You have been signed out");
-        window.location.assign("https://gthackerhome.github.io");
-        }, (error) => {
-        console.log(error);
-        alert("There's been an error, please try closing the browser fully");
-        return false;
-        });
-}
