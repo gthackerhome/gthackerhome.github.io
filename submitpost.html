@@ -61,6 +61,19 @@ function clearCookie(cname) {
   var expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + "''" + ";" + ";path=/;SameSite=strict;secure";
 }		
+
+function showUsername() {
+	var username = getCookie("username");
+	if (username != "") {
+		document.getElementById("signup").style.display = "none";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html' class='active'>Submit</a><a href='#' on:click='logout();return false;'>Logout</p>";
+		document.getElementById("welcomeusername").style.display = "initial";
+	} else {
+		document.getElementById("signup").style.display = "initial";
+		document.getElementById("welcomeusername").style.display = "none";
+	}
+		
+}
 function logout(){
 axios.get('https://greetez.com:4343/user_api/logout',{withCredentials: true}
   ).then((response) => {
@@ -75,19 +88,6 @@ axios.get('https://greetez.com:4343/user_api/logout',{withCredentials: true}
   });
 
 
-}
-
-function showUsername() {
-	var username = getCookie("username");
-	if (username != "") {
-		document.getElementById("signup").style.display = "none";
-		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html' class='active'>Submit</a><a href='javascript:;' on:click='logout();return false;'>Logout</p>";
-		document.getElementById("welcomeusername").style.display = "initial";
-	} else {
-		document.getElementById("signup").style.display = "initial";
-		document.getElementById("welcomeusername").style.display = "none";
-	}
-		
 }
 
 function getCookie(cname) {
