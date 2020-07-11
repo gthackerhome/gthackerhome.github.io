@@ -75,7 +75,7 @@ function showUsername() {
 		
 }
 function logout(){
-axios.get('https://greetez.com:4343/user_api/logout',{withCredentials: true}
+axios.post('https://greetez.com:4343/user_api/logout',{withCredentials: true}
   ).then((response) => {
   console.log(response);
   clearCookie("username");
