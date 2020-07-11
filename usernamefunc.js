@@ -1,4 +1,5 @@
- function showUsername() {
+import axios from 'axios';
+function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
