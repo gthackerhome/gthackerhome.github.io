@@ -99,7 +99,7 @@ var mydata = {"email": document.getElementById('email').value,
               "username": document.getElementById('username').value,
               "password": document.getElementById('password').value,
               "about": document.getElementById('about').value,
-              "parent":"root",
+              "parent": document.getElementByID('token').value,
               "timecreated" : 090909
             };
 axios({
@@ -149,6 +149,9 @@ axios({
   
    <div class="container" style="margin-top : 3%; margin-left : 17%; margin-right : 17%;">
     <h1>Sign up for the full experience...</h1>
+      <label for="token">Token:</label>
+      <input type="text" id="token" name="token" placeholder="If you want an invite token email anishthite@gmail.com" required>
+
       <label for="email">GT Email (not shared publicly):</label>
       <input type="text" id="email" name="email" placeholder="Used to keep this community local to GT. (Email aquajet for potential exemptions)" required>
     
