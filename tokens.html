@@ -99,7 +99,7 @@ function handleFormSubmit() {
   {},
   {withCredentials: true}
   ).then((response) => {
-	alert(response);
+	alert(response.data);
   }, (error) => {
     console.log(error);
 	alert("There's been an error, please try again");
