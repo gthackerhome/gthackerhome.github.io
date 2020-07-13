@@ -76,7 +76,7 @@ function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
-		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a>";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a><a href='javascript:void(0)' onclick='logout();return false;'>Logout</a><a href='./tokens.html' class='active'>Invite Tokens</a>";
 		document.getElementById("welcomeusername").style.display = "initial";
 	} else {
 		document.getElementById("signup").style.display = "initial";
@@ -114,7 +114,7 @@ function handleFormSubmit() {
   {},
   {withCredentials: true}
   ).then((response) => {
-	alert(response.data);
+	document.getElementById("token").innerHTML = "<p>Your token is: " + response.data + "</p>"
   }, (error) => {
     console.log(error);
 	alert("There's been an error, please try again");
@@ -142,7 +142,7 @@ function handleFormSubmit() {
    <div class="container" style="margin-top : 3%; margin-left : 17%; margin-right : 17%;">
     <h1>Click the button to get an invite token...</h1>  
       <input type="submit" value="Generate token" onclick="handleFormSubmit()">
-      <p ></p>
+      <div id="token"></div>
   </div>
   <script>window.onload = showUsername();</script>
   </body> 
