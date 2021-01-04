@@ -56,7 +56,7 @@
 
 <script>
 function logout(){
-axios.post('https://greetez.com:4343/user_api/logout',{"username": getCookie("username")}, {withCredentials: true}
+axios.post('https://brrrr.live:4343/user_api/logout',{"username": getCookie("username")}, {withCredentials: true}
   ).then((response) => {
   console.log(response);
   clearCookie("username");
@@ -76,7 +76,7 @@ function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
-		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a><a href='javascript:void(0)' onclick='logout();return false;'>Logout</a><a href='./tokens.html' class='active'>Invite Tokens</a>";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://brrrr.live:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a><a href='javascript:void(0)' onclick='logout();return false;'>Logout</a><a href='./tokens.html' class='active'>Invite Tokens</a>";
 		document.getElementById("welcomeusername").style.display = "initial";
 	} else {
 		document.getElementById("signup").style.display = "initial";
@@ -115,7 +115,7 @@ function setCookie(cname, cvalue) {
 
 
 function handleFormSubmit() {
-  axios.post('https://greetez.com:4343/user_api/create_token',
+  axios.post('https://brrrr.live:4343/user_api/create_token',
   {},
   {withCredentials: true}
   ).then((response) => {

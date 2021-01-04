@@ -61,7 +61,7 @@ function showUsername() {
 	var username = getCookie("username");
 	if (username != "") {
 		document.getElementById("signup").style.display = "none";
-		document.getElementById("welcomeusername").innerHTML="<a href='https://greetez.com:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a>";
+		document.getElementById("welcomeusername").innerHTML="<a href='https://brrrr.live:4343/user_api/" + username + "'>Welcome " + username + " </a><a href='./submitpost.html'>Submit</a>";
 		document.getElementById("welcomeusername").style.display = "initial";
 	} else {
 		document.getElementById("signup").style.display = "initial";
@@ -104,13 +104,13 @@ var mydata = {"email": document.getElementById('email').value,
             };
 axios({
   method: 'post',
-  url: 'https://greetez.com:4343/user_api/sign_up',
+  url: 'https://brrrr.live:4343/user_api/sign_up',
   data: mydata
 
 
 }).then((response) => {
 
-  axios.post('https://greetez.com:4343/user_api/login',
+  axios.post('https://brrrr.live:4343/user_api/login',
   {"username": mydata.username, "password": mydata.password},
   {withCredentials: true}
   ).then((response) => {
